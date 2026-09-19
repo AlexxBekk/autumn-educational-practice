@@ -11,7 +11,7 @@ erDiagram
 
     products {
         int product_id PK
-        varchar product_name UK
+        varchar product_name
     }
 
     deliveries {

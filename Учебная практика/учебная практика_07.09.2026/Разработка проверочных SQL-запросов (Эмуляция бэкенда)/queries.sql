@@ -12,11 +12,14 @@ BEGIN;
 
 INSERT INTO partners (company_name, inn, contact_email, phone, rating)
 VALUES ('ООО "Новый Партнёр"', '7799999999', 'new_partner@example.com', '+79990001122', NULL)
+ON CONFLICT (inn) DO UPDATE SET
+    company_name  = EXCLUDED.company_name,
+    contact_email = EXCLUDED.contact_email,
+    phone         = EXCLUDED.phone
 RETURNING partner_id;
 
-INSERT INTO deliveries (delivery_id, partner_id, product_id, delivery_date, quantity, total_amount)
+INSERT INTO deliveries (partner_id, product_id, delivery_date, quantity, total_amount)
 VALUES (
-    106,
     (SELECT partner_id FROM partners WHERE inn = '7799999999'),
     1,
     CURRENT_DATE,

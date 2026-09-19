@@ -2,8 +2,8 @@
 
 \copy products (product_id, product_name) FROM 'cleanData/products_clean.csv' WITH (FORMAT csv, HEADER true)
 
-SELECT setval('partners_partner_id_seq', (SELECT MAX(partner_id) FROM partners));
-SELECT setval('products_product_id_seq', (SELECT MAX(product_id) FROM products));
+SELECT setval(pg_get_serial_sequence('partners', 'partner_id'), (SELECT MAX(partner_id) FROM partners));
+SELECT setval(pg_get_serial_sequence('products', 'product_id'), (SELECT MAX(product_id) FROM products));
 
 DROP TABLE IF EXISTS deliveries_staging;
 CREATE TEMP TABLE deliveries_staging (
@@ -23,6 +23,8 @@ FROM deliveries_staging s
 JOIN products p ON p.product_name = s.product_name;
 
 DROP TABLE deliveries_staging;
+
+SELECT setval(pg_get_serial_sequence('deliveries', 'delivery_id'), (SELECT MAX(delivery_id) FROM deliveries));
 
 SELECT 'partners' AS table_name, COUNT(*) FROM partners
 UNION ALL
