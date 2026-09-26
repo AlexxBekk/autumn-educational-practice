@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM: Карточка партнера [Добавление]</title>
+  <link rel="icon" type="image/svg+xml" href="/resources/icon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/form.css">
+  <link rel="stylesheet" href="/dialogs.css">
+  <script type="module" src="/partner-page.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <img class="app-header__logo" src="/resources/logo.svg" alt="Логотип компании">
+    <h1 class="app-header__title" id="page-title">Карточка партнера</h1>
+  </header>
+
+  <main class="panel">
+    <form class="partner-form" id="partner-form" novalidate>
+      <label class="field">
+        <span class="field__label">Наименование</span>
+        <input class="field__input" name="companyName" type="text" placeholder="Логистик-Экспресс" title="Название организации без указания типа">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Тип партнера</span>
+        <select class="field__input" name="partnerType" id="partner-type" title="Выберите организационно-правовую форму"></select>
+      </label>
+
+      <label class="field">
+        <span class="field__label">ИНН</span>
+        <input class="field__input" name="inn" type="text" inputmode="numeric" placeholder="7701234567" title="10 или 12 цифр без пробелов и дефисов">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Рейтинг</span>
+        <input class="field__input" name="rating" type="text" inputmode="numeric" placeholder="10" title="Целое число от 0, без знаков препинания">
+      </label>
+
+      <label class="field field--wide">
+        <span class="field__label">Адрес</span>
+        <input class="field__input" name="address" type="text" placeholder="г. Москва, ул. Ленина, д. 1, офис 20" title="Почтовый адрес компании">
+      </label>
+
+      <label class="field field--wide">
+        <span class="field__label">ФИО директора</span>
+        <input class="field__input" name="directorName" type="text" placeholder="Иванов Иван Иванович" title="Фамилия, имя и отчество руководителя">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Телефон</span>
+        <input class="field__input" name="phone" type="tel" placeholder="+7 (999) 123-45-67" title="Формат: +7 (999) 123-45-67">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Email</span>
+        <input class="field__input" name="email" type="text" placeholder="name@company.ru" title="Формат: name@company.ru">
+      </label>
+
+      <div class="partner-form__actions">
+        <button class="button" type="button" id="back-button">Назад</button>
+        <button class="button button--primary" type="submit" id="save-button">Сохранить</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

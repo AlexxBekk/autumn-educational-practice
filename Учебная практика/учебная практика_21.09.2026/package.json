@@ -1,0 +1,15 @@
+{
+  "name": "partners-crm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.2"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env \"Проектирование многооконной архитектуры и навигации/server.js\""
+  },
+  "dependencies": {
+    "pg": "^8.23.0"
+  }
+}

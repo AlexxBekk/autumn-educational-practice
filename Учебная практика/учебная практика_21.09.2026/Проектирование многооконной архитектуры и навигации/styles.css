@@ -1,0 +1,130 @@
+:root {
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-border: #7f7f7f;
+  --color-muted: #595959;
+  --font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-size-title: 24px;
+  --font-size-name: 20px;
+  --font-size-text: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto 16px;
+}
+
+.app-header__logo {
+  width: 64px;
+  height: 64px;
+}
+
+.app-header__title {
+  margin: 0;
+  font-size: var(--font-size-title);
+  font-weight: 600;
+}
+
+.app-header .button {
+  margin-left: auto;
+}
+
+.button {
+  padding: 10px 18px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-text);
+  cursor: pointer;
+}
+
+.button--primary {
+  border-color: var(--color-text);
+  font-weight: 600;
+}
+
+.button:hover {
+  background: #f2f2f2;
+}
+
+.button:disabled {
+  color: var(--color-muted);
+  cursor: default;
+}
+
+.panel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border: 1px solid var(--color-border);
+}
+
+.panel__status {
+  margin: 0;
+  font-size: var(--font-size-text);
+  color: var(--color-muted);
+}
+
+.partner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partner-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  text-align: left;
+  cursor: pointer;
+}
+
+.partner-card:hover {
+  background: #f2f2f2;
+}
+
+.partner-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.partner-card__name {
+  margin-bottom: 2px;
+  font-size: var(--font-size-name);
+}
+
+.partner-card__line {
+  font-size: var(--font-size-text);
+}
+
+.partner-card__discount {
+  font-size: var(--font-size-name);
+  white-space: nowrap;
+}
