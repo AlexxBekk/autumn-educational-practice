@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM: Калькулятор расчета материалов</title>
+  <link rel="icon" type="image/svg+xml" href="/resources/icon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/form.css">
+  <link rel="stylesheet" href="/dialogs.css">
+  <script type="module" src="/calculator-page.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <img class="app-header__logo" src="/resources/logo.svg" alt="Логотип компании">
+    <h1 class="app-header__title">Калькулятор расчета материалов</h1>
+    <button class="button" type="button" id="back-button">Назад</button>
+  </header>
+
+  <main class="panel">
+    <form class="partner-form" id="calculator-form" novalidate>
+      <label class="field">
+        <span class="field__label">Тип продукции</span>
+        <select class="field__input" name="productTypeId" title="Коэффициент типа продукции берется из справочника"></select>
+      </label>
+
+      <label class="field">
+        <span class="field__label">Тип материала</span>
+        <select class="field__input" name="materialTypeId" title="Процент брака материала берется из справочника"></select>
+      </label>
+
+      <label class="field">
+        <span class="field__label">Количество продукции, шт.</span>
+        <input class="field__input" name="quantity" type="text" inputmode="numeric" placeholder="10" title="Целое число больше нуля">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Параметр 1</span>
+        <input class="field__input" name="param1" type="text" inputmode="decimal" placeholder="2.5" title="Положительное число, дробная часть через точку">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Параметр 2</span>
+        <input class="field__input" name="param2" type="text" inputmode="decimal" placeholder="3.4" title="Положительное число, дробная часть через точку">
+      </label>
+
+      <div class="partner-form__actions">
+        <button class="button button--primary" type="submit" id="calculate-button">Рассчитать</button>
+      </div>
+    </form>
+
+    <p class="calculation-result" id="calculation-result" role="status" hidden></p>
+  </main>
+</body>
+</html>

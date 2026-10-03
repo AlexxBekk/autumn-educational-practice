@@ -1,0 +1,20 @@
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-text);
+}
+
+.history-table th,
+.history-table td {
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.history-table th {
+  font-weight: 600;
+}
+
+.history-table__number {
+  white-space: nowrap;
+}

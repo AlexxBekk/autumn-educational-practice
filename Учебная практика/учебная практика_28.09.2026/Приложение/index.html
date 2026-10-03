@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM: Реестр партнеров</title>
+  <link rel="icon" type="image/svg+xml" href="/resources/icon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/dialogs.css">
+  <script type="module" src="/main-page.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <img class="app-header__logo" src="/resources/logo.svg" alt="Логотип компании">
+    <h1 class="app-header__title">Реестр партнеров</h1>
+    <button class="button" type="button" id="calculator-button">Калькулятор материалов</button>
+    <button class="button button--primary" type="button" id="add-partner-button">Добавить партнера</button>
+  </header>
+
+  <main class="panel">
+    <p class="panel__status" id="partner-status" role="status">Загрузка...</p>
+    <ul class="partner-list" id="partner-list"></ul>
+  </main>
+
+  <template id="partner-card-template">
+    <li class="partner-card">
+      <button class="partner-card__open" type="button">
+        <span class="partner-card__name"></span>
+        <span class="partner-card__line" data-field="director"></span>
+        <span class="partner-card__line" data-field="phone"></span>
+        <span class="partner-card__line" data-field="rating"></span>
+      </button>
+      <div class="partner-card__aside">
+        <span class="partner-card__discount"></span>
+        <button class="button partner-card__history" type="button">История продаж</button>
+      </div>
+    </li>
+  </template>
+</body>
+</html>

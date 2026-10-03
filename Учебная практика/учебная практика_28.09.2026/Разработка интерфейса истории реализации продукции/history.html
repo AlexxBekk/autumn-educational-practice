@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM: История реализации продукции</title>
+  <link rel="icon" type="image/svg+xml" href="/resources/icon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/history.css">
+  <link rel="stylesheet" href="/dialogs.css">
+  <script type="module" src="/history-page.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <img class="app-header__logo" src="/resources/logo.svg" alt="Логотип компании">
+    <h1 class="app-header__title" id="page-title">История реализации продукции</h1>
+    <button class="button" type="button" id="back-button">Назад</button>
+  </header>
+
+  <main class="panel">
+    <p class="panel__status" id="history-status" role="status">Загрузка...</p>
+    <table class="history-table" id="history-table" hidden>
+      <thead>
+        <tr>
+          <th scope="col">Наименование продукции</th>
+          <th scope="col">Количество (шт.)</th>
+          <th scope="col">Дата продажи</th>
+        </tr>
+      </thead>
+      <tbody id="history-rows"></tbody>
+    </table>
+  </main>
+
+  <template id="history-row-template">
+    <tr>
+      <td data-field="productName"></td>
+      <td class="history-table__number" data-field="quantity"></td>
+      <td class="history-table__number" data-field="saleDate"></td>
+    </tr>
+  </template>
+</body>
+</html>
